@@ -8,11 +8,11 @@ type ConfirmModalProps = {
   reset: () => void;
 };
 
-const ConfirmModal = ({ cart, confirmModal, reset }: ConfirmModalProps) => {
+const ConfirmModal = ({ cart, reset }: ConfirmModalProps) => {
   return (
     <>
       <div
-        onClick={confirmModal}
+        onClick={reset}
         className="fixed h-screen w-screen top-0 left-0 bg-gray-500 opacity-70"
       ></div>
       <div className="fixed h-[500px] sm:h-[600px] sm:w-[600px] mx-4 sm:mx-auto top-0 left-0 bottom-0 right-0 m-auto bg-white rounded-xl p-6 sm:p-10 font-redhat-text tracking-normal flex flex-col justify-between gap-2 lg:gap-4 overflow-y-scroll">
