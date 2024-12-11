@@ -23,3 +23,5 @@ design
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
