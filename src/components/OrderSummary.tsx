@@ -8,7 +8,7 @@ type OrderSumaryProps = {
 const OrderSummary = ({ cart }: OrderSumaryProps) => {
   console.log(cart);
   return (
-    <div className="p-6 bg-Rose-50 rounded-lg flex flex-col gap-6">
+    <div className="p-4 sm:p-6 bg-Rose-50 rounded-lg flex flex-col gap-6">
       {cart.map(product => (
         <SummaryItem
           key={product.item.name}
@@ -17,7 +17,7 @@ const OrderSummary = ({ cart }: OrderSumaryProps) => {
         />
       ))}
       <div className="flex justify-between items-center">
-        <span className="text-Rose-900 text-sm leading-[150%] tracking-normal">
+        <span className="text-Rose-900 text-base leading-[150%] tracking-normal">
           Order Total
         </span>
         <span className="text-Rose-900 text-2xl leading-[125%] tracking-normal font-bold">

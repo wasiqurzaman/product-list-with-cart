@@ -20,7 +20,7 @@ const AddToCartButton = ({ item, count, addItem, decreaseItem }: Props) => {
     return (
       <button
         onClick={handleIncrement}
-        className="w-[50%] sm:w-[70%] flex gap-1 xl:gap-2 items-center justify-center bg-white border-2 border-Rose-400 py-[12.5px] px-[14px] xl:px-[28px] rounded-full absolute bottom-0 translate-y-1/2  -translate-x-1/2 left-[50%] hover:border-Red hover:text-Red transition-colors duration-300 "
+        className="w-[50%] xs:w-[65%] sm:w-[70%] flex gap-1 xl:gap-2 items-center justify-center bg-white border-2 border-Rose-400 py-[12.5px] px-[14px] xl:px-[28px] rounded-full absolute bottom-0 translate-y-1/2  -translate-x-1/2 left-[50%] hover:border-Red hover:text-Red transition-colors duration-300 "
       >
         <img src="/images/icon-add-to-cart.svg" alt="cart icon" />
         <span className="text-sm font-bold leading-[150%] tracking-normal">
@@ -30,7 +30,7 @@ const AddToCartButton = ({ item, count, addItem, decreaseItem }: Props) => {
     );
 
   return (
-    <div className="w-[50%] sm:w-[70%] flex gap-2 items-center justify-between bg-Red border-2 border-Red py-[12px] px-[12px] rounded-full absolute bottom-0 translate-y-1/2 -translate-x-1/2 left-[50%]">
+    <div className="w-[50%] xs:w-[65%] sm:w-[70%] flex gap-2 items-center justify-between bg-Red border-2 border-Red py-[12px] px-[12px] rounded-full absolute bottom-0 translate-y-1/2 -translate-x-1/2 left-[50%]">
       <button
         onClick={handleDecrement}
         className="group h-6 w-6 border-2 border-white rounded-[50%] flex items-center justify-center hover:bg-white"
