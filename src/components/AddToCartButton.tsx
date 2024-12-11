@@ -1,21 +1,26 @@
-import { useState } from "react";
+import { Product } from "./ProductCard";
 
-const AddToCartButton = () => {
-  const [itemsOrdered, setItemsOrdered] = useState(0);
+type Props = {
+  item: Product;
+  count: number;
+  addItem: (item: Product) => void;
+  decreaseItem: (item: Product) => void;
+};
+
+const AddToCartButton = ({ item, count, addItem, decreaseItem }: Props) => {
+  const handleIncrement = () => {
+    addItem(item);
+  };
 
   const handleDecrement = () => {
-    setItemsOrdered(items => (items >= 1 ? items - 1 : items));
+    decreaseItem(item);
   };
 
-  const handleIncrement = () => {
-    setItemsOrdered(items => items + 1);
-  };
-
-  if (itemsOrdered === 0)
+  if (!count)
     return (
       <button
-        onClick={() => setItemsOrdered(1)}
-        className="w-[70%] flex gap-2 items-center justify-center bg-white border-2 border-Rose-400 py-[12.5px] px-[28px] rounded-full absolute bottom-0 translate-y-1/2  -translate-x-1/2 left-[50%] hover:border-Red hover:text-Red transition-colors duration-300 "
+        onClick={handleIncrement}
+        className="w-[50%] sm:w-[70%] flex gap-1 xl:gap-2 items-center justify-center bg-white border-2 border-Rose-400 py-[12.5px] px-[14px] xl:px-[28px] rounded-full absolute bottom-0 translate-y-1/2  -translate-x-1/2 left-[50%] hover:border-Red hover:text-Red transition-colors duration-300 "
       >
         <img src="/images/icon-add-to-cart.svg" alt="cart icon" />
         <span className="text-sm font-bold leading-[150%] tracking-normal">
@@ -25,7 +30,7 @@ const AddToCartButton = () => {
     );
 
   return (
-    <div className="w-[70%] flex gap-2 items-center justify-between bg-Red border-2 border-Red py-[12px] px-[12px] rounded-full absolute bottom-0 translate-y-1/2 -translate-x-1/2 left-[50%]">
+    <div className="w-[50%] sm:w-[70%] flex gap-2 items-center justify-between bg-Red border-2 border-Red py-[12px] px-[12px] rounded-full absolute bottom-0 translate-y-1/2 -translate-x-1/2 left-[50%]">
       <button
         onClick={handleDecrement}
         className="group h-6 w-6 border-2 border-white rounded-[50%] flex items-center justify-center hover:bg-white"
@@ -46,7 +51,7 @@ const AddToCartButton = () => {
         </svg>
       </button>
       <span className="text-sm font-bold leading-[150%] tracking-normal text-white">
-        {itemsOrdered}
+        {count}
       </span>
       <button
         onClick={handleIncrement}
